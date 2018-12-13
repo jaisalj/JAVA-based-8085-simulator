@@ -1,0 +1,16 @@
+LABEL:START
+	   MVI C,09	
+	   LXI H,C050	
+
+LABEL:X
+	   MOV ACC,M
+	   INX H
+	   MOV B,M
+	   INX H
+	   ADD B
+	   DAA
+	   MOV M,ACC
+	   DCX H
+	   DCR C
+	   JNZ X
+	   RST 1
